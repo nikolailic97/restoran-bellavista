@@ -1226,7 +1226,7 @@ footer {
   font-family: var(--serif);
   font-style: italic;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.58);
   margin-bottom: 2.5rem;
 }
 
@@ -1243,7 +1243,7 @@ footer {
   font-size: 0.68rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
   transition: color 0.3s;
 }
 
@@ -1267,7 +1267,7 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.7);
   transition: var(--trans);
 }
 
@@ -1279,7 +1279,7 @@ footer {
 .footer-copy {
   font-size: 0.68rem;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.52);
 }
 
 /* ================================================================
