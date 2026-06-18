@@ -90,7 +90,7 @@ function openTab(id, idx) {
     tabBtns[idx].setAttribute('aria-selected', 'true');
     tabBtns[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   }
-  updateArrows();
+  if (typeof updateArrows === 'function') updateArrows();
 }
 window.openTab = openTab;
 
@@ -166,5 +166,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   window.addEventListener('load', updateArrows);
 
   updateArrows();
-  window.scrollTabs = scrollTabs;
+  window.scrollTabs    = scrollTabs;
+  window.updateArrows  = updateArrows; /* expose za openTab */
 }());

@@ -797,7 +797,7 @@ body.lang-en small[data-lang="en"] {
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.38);
+  color: var(--gold);
   transition: color 0.3s;
   position: relative;
 }
