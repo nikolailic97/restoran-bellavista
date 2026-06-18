@@ -901,7 +901,7 @@ body.lang-en small[data-lang="en"] {
 
 .dish-price small {
   font-size: 0.68rem;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .menu-subcat {
@@ -1502,7 +1502,7 @@ footer {
 /* Tekst kartice */
 .event-card-body {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.55);
   font-weight: 300;
   line-height: 1.85;
   margin-bottom: 2rem;
