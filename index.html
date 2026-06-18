@@ -397,9 +397,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-     3. MENI
-============================================================ -->
     <section id="meni" aria-label="Jelovnik">
       <div class="menu-hdr">
         <p class="t-label rv">
@@ -412,9 +409,29 @@
         <span class="gold-line center rv" aria-hidden="true"></span>
       </div>
 
-      <!-- STICKY TABOVI -->
+      <!-- STICKY TAB BAR — 10 tabova -->
       <div class="tabs-wrap" role="tablist" aria-label="Kategorije jelovnika">
-        <div class="tabs-row">
+        <button
+          class="tabs-arrow tabs-arrow--left"
+          id="tabArrowLeft"
+          onclick="scrollTabs(-1)"
+          aria-label="Prethodna kategorija"
+          aria-hidden="true"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <div class="tabs-row" id="tabsRow">
           <button
             class="tab-btn active"
             onclick="openTab('dorucak', 0)"
@@ -430,16 +447,17 @@
             role="tab"
             aria-selected="false"
           >
-            <span data-lang="sr">Predjela &amp; Salate</span
-            ><span data-lang="en">Starters &amp; Salads</span>
+            <span data-lang="sr">Predjela</span
+            ><span data-lang="en">Starters</span>
           </button>
           <button
             class="tab-btn"
-            onclick="openTab('riba', 2)"
+            onclick="openTab('salate', 2)"
             role="tab"
             aria-selected="false"
           >
-            <span data-lang="sr">Riba</span><span data-lang="en">Fish</span>
+            <span data-lang="sr">Salate &amp; Hleb</span
+            ><span data-lang="en">Salads &amp; Bread</span>
           </button>
           <button
             class="tab-btn"
@@ -447,47 +465,87 @@
             role="tab"
             aria-selected="false"
           >
-            <span data-lang="sr">Piletina</span
-            ><span data-lang="en">Chicken</span>
+            <span data-lang="sr">Piletina &amp; Roštilj</span
+            ><span data-lang="en">Chicken &amp; Grill</span>
           </button>
           <button
             class="tab-btn"
-            onclick="openTab('rostilj', 4)"
+            onclick="openTab('specijaliteti', 4)"
             role="tab"
             aria-selected="false"
           >
-            <span data-lang="sr">Roštilj &amp; Specijaliteti</span
-            ><span data-lang="en">Grill &amp; Specials</span>
+            <span data-lang="sr">Specijaliteti</span
+            ><span data-lang="en">Specialties</span>
           </button>
           <button
             class="tab-btn"
-            onclick="openTab('burgeri', 5)"
+            onclick="openTab('riba', 5)"
             role="tab"
             aria-selected="false"
           >
-            <span data-lang="sr">Burgeri &amp; Prilozi</span
-            ><span data-lang="en">Burgers &amp; Sides</span>
+            <span data-lang="sr">Riba &amp; Burgeri</span
+            ><span data-lang="en">Fish &amp; Burgers</span>
           </button>
           <button
             class="tab-btn"
-            onclick="openTab('pica', 6)"
+            onclick="openTab('deserti', 6)"
             role="tab"
             aria-selected="false"
           >
-            <span data-lang="sr">Pića</span
-            ><span data-lang="en">Beverages</span>
+            <span data-lang="sr">Deserti</span
+            ><span data-lang="en">Desserts</span>
+          </button>
+          <button
+            class="tab-btn"
+            onclick="openTab('kafe', 7)"
+            role="tab"
+            aria-selected="false"
+          >
+            <span data-lang="sr">Kafe &amp; Napitci</span
+            ><span data-lang="en">Coffee &amp; Drinks</span>
+          </button>
+          <button
+            class="tab-btn"
+            onclick="openTab('alkohol', 8)"
+            role="tab"
+            aria-selected="false"
+          >
+            <span data-lang="sr">Alkoholna pića</span
+            ><span data-lang="en">Alcoholic</span>
           </button>
         </div>
+        <button
+          class="tabs-arrow tabs-arrow--right"
+          id="tabArrowRight"
+          onclick="scrollTabs(1)"
+          aria-label="Sledeća kategorija"
+          aria-hidden="true"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
       </div>
 
       <div class="menu-panels container">
-        <!-- ===== DORUČAK ===== -->
+        <!-- ===================================================
+         TAB 1: DORUČAK / BREAKFAST
+    =================================================== -->
         <div class="menu-panel active" id="p-dorucak" role="tabpanel">
           <div class="menu-grid">
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Domaćinske prženice</span
+                  <span data-lang="sr">Domaće prženice</span
                   ><span data-lang="en">Homestyle French Toast</span>
                 </div>
                 <div class="dish-desc">
@@ -495,13 +553,13 @@
                   ><span data-lang="en">Seasonal salad, sour cream</span>
                 </div>
               </div>
-              <div class="dish-price">370 <small>rsd</small></div>
+              <div class="dish-price">420 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Domaćinske punjene prženice</span
+                  <span data-lang="sr">Domaće punjene prženice</span
                   ><span data-lang="en">Stuffed French Toast</span>
                 </div>
                 <div class="dish-desc">
@@ -512,7 +570,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">450 <small>rsd</small></div>
+              <div class="dish-price">520 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -522,11 +580,11 @@
                   ><span data-lang="en">Omelette of Your Choice</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr">Prilog po izboru, 1 jaje</span
-                  ><span data-lang="en">Side of choice, 1 egg</span>
+                  <span data-lang="sr">Prilog po izboru, 3 jaja</span
+                  ><span data-lang="en">Side of choice, 3 eggs</span>
                 </div>
               </div>
-              <div class="dish-price">370 <small>rsd</small></div>
+              <div class="dish-price">420 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -536,11 +594,14 @@
                   ><span data-lang="en">Homemade Scrambled Eggs</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr">Sezonski prilog</span
-                  ><span data-lang="en">Seasonal side</span>
+                  <span data-lang="sr"
+                    >Sezonsko povrće, 3 jaja, pavlaka, sir</span
+                  ><span data-lang="en"
+                    >Seasonal vegetables, 3 eggs, sour cream, cheese</span
+                  >
                 </div>
               </div>
-              <div class="dish-price">350 <small>rsd</small></div>
+              <div class="dish-price">400 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -551,14 +612,14 @@
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr"
-                    >Dressing, paradajz, iceberg, čeri, sir</span
+                    >Dresing, paradajz, pečenica, iceberg, čedar sir</span
                   ><span data-lang="en"
-                    >Dressing, tomato, iceberg lettuce, cherry tomato,
-                    cheese</span
+                    >Dressing, tomato, cured meat, iceberg lettuce,
+                    cheddar</span
                   >
                 </div>
               </div>
-              <div class="dish-price">520 <small>rsd</small></div>
+              <div class="dish-price">570 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -575,7 +636,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">450 <small>rsd</small></div>
+              <div class="dish-price">520 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -587,42 +648,42 @@
                 <div class="dish-desc">
                   <span data-lang="sr"
                     >Kobasica, sezonska salata, slanina, 4 jaja, pohovani
-                    kačkavalj, domaći sir, jaje</span
+                    kačkavalj, sir, senf</span
                   ><span data-lang="en"
                     >Sausage, seasonal salad, bacon, 4 eggs, breaded kashkaval,
-                    homemade cheese</span
+                    cheese, mustard</span
                   >
                 </div>
               </div>
-              <div class="dish-price">1.150 <small>rsd</small></div>
+              <div class="dish-price">1.300 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Kačamak Bellavista</span
-                  ><span data-lang="en">Bellavista Cornmeal Porridge</span>
+                  <span data-lang="sr">Seoski klasik</span
+                  ><span data-lang="en">Country Classic</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr">Slanina, domaći sir, jaje</span
-                  ><span data-lang="en">Bacon, homemade cheese, egg</span>
+                  <span data-lang="sr">Palenta, slanina, sir, jaje</span
+                  ><span data-lang="en">Polenta, bacon, cheese, egg</span>
                 </div>
               </div>
-              <div class="dish-price">300 <small>rsd</small></div>
+              <div class="dish-price">350 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Popara</span
-                  ><span data-lang="en">Bread &amp; Cheese Porridge</span>
+                  <span data-lang="sr">Zalogaj detinjstva</span
+                  ><span data-lang="en">Childhood Bite</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr">Domaći sir</span
-                  ><span data-lang="en">Homemade cheese</span>
+                  <span data-lang="sr">Pitajte konobara za detalje</span
+                  ><span data-lang="en">Ask your waiter for details</span>
                 </div>
               </div>
-              <div class="dish-price">300 <small>rsd</small></div>
+              <div class="dish-price">350 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -632,37 +693,152 @@
                   ><span data-lang="en">Sweet / Savory Doughnuts</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr">Kremšnit, ajvar / pavlaka</span
+                  <span data-lang="sr">Krem / džem, ajvar / pavlaka</span
+                  ><span data-lang="en">Cream / jam, ajvar / sour cream</span>
+                </div>
+              </div>
+              <div class="dish-price">450 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Komplet lepinja</span
+                  ><span data-lang="en">Complete Flatbread</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Pretop, jaje, kajmak</span
+                  ><span data-lang="en">Dripping, egg, kajmak</span>
+                </div>
+              </div>
+              <div class="dish-price">450 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Naša komplet lepinja</span
+                  ><span data-lang="en">Our Complete Flatbread</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Pečenica ili kulen, pretop, jaje, kajmak</span
                   ><span data-lang="en"
-                    >Cream cake filling, ajvar / sour cream</span
+                    >Cured meat or kulen, dripping, egg, kajmak</span
                   >
                 </div>
               </div>
-              <div class="dish-price">380 <small>rsd</small></div>
+              <div class="dish-price">600 <small>rsd</small></div>
             </div>
           </div>
         </div>
         <!-- /dorucak -->
 
-        <!-- ===== PREDJELA & SALATE ===== -->
+        <!-- ===================================================
+         TAB 2: PREDJELA / STARTERS
+    =================================================== -->
         <div class="menu-panel" id="p-predjela" role="tabpanel">
           <div class="menu-grid">
+            <!-- Sitne radosti -->
             <div class="menu-subcat">
               <span class="menu-subcat-label"
-                ><span data-lang="sr">— Čorbe</span
-                ><span data-lang="en">— Soups</span></span
+                ><span data-lang="sr">— Sitne radosti</span
+                ><span data-lang="en">— Little Pleasures</span></span
               >
             </div>
 
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Teleća čorba</span
-                  ><span data-lang="en">Veal Soup</span>
+                  <span data-lang="sr">Meze za dvoje</span
+                  ><span data-lang="en">Meze for Two</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr">Domaća, kuvana na sporom ognju</span
-                  ><span data-lang="en">Homemade, slow-cooked</span>
+                  <span data-lang="sr"
+                    >Dimljeni ramstek, kulen u katu, pršuta, domaća slanina,
+                    brza proja sa sirom, lisnata</span
+                  ><span data-lang="en"
+                    >Smoked rump steak, kulen, prosciutto, homemade bacon, corn
+                    bread with cheese, layered cheese</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">1.500 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Dimljeni ramstek 100g</span
+                  ><span data-lang="en">Smoked Rump Steak 100g</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Tanko sečen dimljeni ramstek</span
+                  ><span data-lang="en">Thinly sliced smoked rump steak</span>
+                </div>
+              </div>
+              <div class="dish-price">700 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Kulen u katu 100g</span
+                  ><span data-lang="en">Kulen in Fat 100g</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Tradicionalni kulen čuvan u svinjskoj masti</span
+                  ><span data-lang="en"
+                    >Traditional kulen preserved in pork fat</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">600 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Pršuta 100g</span
+                  ><span data-lang="en">Prosciutto 100g</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Tanko sečena sušena pršuta</span
+                  ><span data-lang="en">Thinly sliced cured prosciutto</span>
+                </div>
+              </div>
+              <div class="dish-price">600 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Domaća slanina 100g</span
+                  ><span data-lang="en">Homemade Bacon 100g</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Dimljena domaća slanina, tanko sečena</span
+                  ><span data-lang="en"
+                    >Smoked homemade bacon, thinly sliced</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">400 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Brza proja sa sirom 300g</span
+                  ><span data-lang="en">Quick Corn Bread with Cheese 300g</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Domaća proja sa belim sirom</span
+                  ><span data-lang="en"
+                    >Homemade corn bread with white cheese</span
+                  >
                 </div>
               </div>
               <div class="dish-price">300 <small>rsd</small></div>
@@ -671,140 +847,188 @@
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Riblja čorba</span
-                  ><span data-lang="en">Fish Soup</span>
+                  <span data-lang="sr">Kolašinski lisnati sir 100g</span
+                  ><span data-lang="en">Kolašin Layered Cheese 100g</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr">Sveža riba iz jezera, domaći začini</span
-                  ><span data-lang="en">Fresh lake fish, homemade spices</span>
+                  <span data-lang="sr"
+                    >Autentični kolašinski sir u listovima</span
+                  ><span data-lang="en"
+                    >Authentic layered cheese from Kolašin</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">450 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Domaći sir 200g</span
+                  ><span data-lang="en">Homemade White Cheese 200g</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Svež domaći beli sir iz salamure</span
+                  ><span data-lang="en"
+                    >Fresh homemade white brined cheese</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">400 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Domaći kajmak 150g</span
+                  ><span data-lang="en">Homemade Kajmak 150g</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Svež domaći kajmak</span
+                  ><span data-lang="en">Fresh homemade kajmak cream</span>
+                </div>
+              </div>
+              <div class="dish-price">450 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Urnebes</span
+                  ><span data-lang="en">Urnebes Spicy Spread</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Začinjen sir sa paprikom, domaći recept</span
+                  ><span data-lang="en"
+                    >Spiced cheese with peppers, homemade recipe</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">400 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Domaći ajvar</span
+                  ><span data-lang="en">Homemade Ajvar</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Pečena paprika, domaći recept</span
+                  ><span data-lang="en"
+                    >Roasted pepper spread, homemade recipe</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">400 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Domaći čvarci</span
+                  ><span data-lang="en">Homemade Cracklings</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Hrskavi svinjski čvarci, domaće pravljeni</span
+                  ><span data-lang="en">Crispy pork cracklings, homemade</span>
+                </div>
+              </div>
+              <div class="dish-price">500 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Paprika u pavlaci</span
+                  ><span data-lang="en">Peppers in Cream</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Pečena paprika u pavlaci sa belim lukom</span
+                  ><span data-lang="en"
+                    >Roasted peppers in sour cream with garlic</span
+                  >
                 </div>
               </div>
               <div class="dish-price">300 <small>rsd</small></div>
             </div>
 
-            <div class="menu-subcat">
-              <span class="menu-subcat-label"
-                ><span data-lang="sr">— Obrok salate</span
-                ><span data-lang="en">— Meal Salads</span></span
-              >
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Feferoni</span
+                  ><span data-lang="en">Hot Peppers</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Sveži ili ukiseljeni feferoni</span
+                  ><span data-lang="en">Fresh or pickled hot peppers</span>
+                </div>
+              </div>
+              <div class="dish-price">300 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Cezar salata</span
-                  ><span data-lang="en">Caesar Salad</span>
+                  <span data-lang="sr"
+                    >Domaći krompir punjen kajmakom i slaninicom</span
+                  ><span data-lang="en"
+                    >Potato stuffed with Kajmak &amp; Bacon</span
+                  >
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr"
-                    >Tost hleb, piletina, slaninka, čeri paradajz, dressing,
-                    iceberg, parmezan</span
+                    >Pečeni krompir punjen kajmakom i hrskavom slaninicom</span
                   ><span data-lang="en"
-                    >Croutons, chicken, bacon, cherry tomato, dressing, iceberg,
-                    parmesan</span
+                    >Baked potato stuffed with kajmak and crispy bacon</span
                   >
                 </div>
               </div>
-              <div class="dish-price">760 <small>rsd</small></div>
+              <div class="dish-price">600 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Biftek salata</span
-                  ><span data-lang="en">Beef Steak Salad</span>
+                  <span data-lang="sr">Sirna priča</span
+                  ><span data-lang="en">Cheese Story</span>
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr"
-                    >Biftek, hrskavi krompirići, čeri paradajz, krotoni, sos
-                    iceberg, parmezan</span
+                    >Ljuti kačkavalj, kačkavalj sa belim lukom, kačkavalj sa
+                    bosiljkom, lisnati sir, gorgonzola</span
                   ><span data-lang="en"
-                    >Beef steak, crispy potatoes, cherry tomato, croutons,
-                    iceberg dressing, parmesan</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">990 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Bellavista salata</span
-                  ><span data-lang="en">Bellavista Salad</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Mešana zelena salata, jabuka, čeri paradajz, dressing,
-                    grilovani sir</span
-                  ><span data-lang="en"
-                    >Mixed greens, apple, cherry tomato, dressing, grilled
-                    cheese</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">760 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Tuna salata</span
-                  ><span data-lang="en">Tuna Salad</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Tunjevina, kukuruz, srpsko povrće</span
-                  ><span data-lang="en"
-                    >Tuna, corn, Serbian mixed vegetables</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">710 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-subcat">
-              <span class="menu-subcat-label"
-                ><span data-lang="sr">— Hladna i topla predjela</span
-                ><span data-lang="en">— Cold &amp; Hot Appetizers</span></span
-              >
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Mezetluk Bellavista</span
-                  ><span data-lang="en">Bellavista Meze Platter</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Proja, pirotska kobasica, dimljeni svinjski vrat, kajmak,
-                    urnebes, domaći sir</span
-                  ><span data-lang="en"
-                    >Corn bread, Pirot sausage, smoked pork neck, kajmak,
-                    urnebes, homemade cheese</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">1.750 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Plata sireva</span
-                  ><span data-lang="en">Cheese Plate</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Masline, dimljeni sir sa aromatičnim belim lukom, peršunom,
-                    maslinama i paprikom, domaći sir, miročki sir</span
-                  ><span data-lang="en"
-                    >Olives, smoked cheese with aromatic garlic, parsley, olives
-                    and pepper, homemade cheese, Miročki cheese</span
+                    >Spicy kashkaval, garlic kashkaval, basil kashkaval, layered
+                    cheese, gorgonzola</span
                   >
                 </div>
               </div>
               <div class="dish-price">1.800 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Pihtije</span
+                  ><span data-lang="en">Meat Aspic</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Tradicionalne domaće pihtije</span
+                  ><span data-lang="en">Traditional homemade pork aspic</span>
+                </div>
+              </div>
+              <div class="dish-price">550 <small>rsd</small></div>
+            </div>
+
+            <!-- Topla preporuka -->
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Topla preporuka</span
+                ><span data-lang="en">— Warm Picks</span></span
+              >
             </div>
 
             <div class="menu-row">
@@ -817,11 +1041,11 @@
                   <span data-lang="sr"
                     >Zlatno pohovan kačkavalj, tartare sos</span
                   ><span data-lang="en"
-                    >Golden-fried kashkaval cheese, tartare sauce</span
+                    >Golden-fried kashkaval, tartare sauce</span
                   >
                 </div>
               </div>
-              <div class="dish-price">800 <small>rsd</small></div>
+              <div class="dish-price">670 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -838,7 +1062,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">450 <small>rsd</small></div>
+              <div class="dish-price">550 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -857,7 +1081,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">600 <small>rsd</small></div>
+              <div class="dish-price">680 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -877,7 +1101,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">600 <small>rsd</small></div>
+              <div class="dish-price">700 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -894,151 +1118,357 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">450 <small>rsd</small></div>
+              <div class="dish-price">580 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr"
+                    >Grilovane tikvice sa sirom i pršutom</span
+                  ><span data-lang="en"
+                    >Grilled Zucchini with Cheese &amp; Prosciutto</span
+                  >
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Sveže tikvice na žaru, beli sir, pršuta</span
+                  ><span data-lang="en"
+                    >Fresh grilled zucchini, white cheese, prosciutto</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">680 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">★ Patlidžan parmigiana</span
+                  ><span data-lang="en">★ Aubergine Parmigiana</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Najtoplija preporuka kuhinje — mocarela zapečena sa plavim
+                    patlidžanom i pelatom</span
+                  ><span data-lang="en"
+                    >Chef's warmest pick — mozzarella baked with aubergine and
+                    peeled tomatoes</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">730 <small>rsd</small></div>
+            </div>
+
+            <!-- Čorbe -->
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Čorbe</span
+                ><span data-lang="en">— Soups</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Teleća čorba</span
+                  ><span data-lang="en">Veal Soup</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Domaća, kuvana na sporom ognju</span
+                  ><span data-lang="en">Homemade, slow-cooked</span>
+                </div>
+              </div>
+              <div class="dish-price">350 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Riblja čorba</span
+                  ><span data-lang="en">Fish Soup</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Sveža riba iz jezera, domaći začini</span
+                  ><span data-lang="en">Fresh lake fish, homemade spices</span>
+                </div>
+              </div>
+              <div class="dish-price">350 <small>rsd</small></div>
+            </div>
+
+            <!-- Obrok salate -->
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Obrok salate</span
+                ><span data-lang="en">— Meal Salads</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Cezar salata</span
+                  ><span data-lang="en">Caesar Salad</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Tost hleb, piletina, slaninica, čeri paradajz, dresing,
+                    iceberg, parmezan</span
+                  ><span data-lang="en"
+                    >Croutons, chicken, bacon, cherry tomato, dressing, iceberg,
+                    parmesan</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">810 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Bellavista salata</span
+                  ><span data-lang="en">Bellavista Salad</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Nar, pršuta, jabuka, čeri paradajz, dresing, grilovani
+                    sir</span
+                  ><span data-lang="en"
+                    >Pomegranate, prosciutto, apple, cherry tomato, dressing,
+                    grilled cheese</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">950 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Tuna salata</span
+                  ><span data-lang="en">Tuna Salad</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Tunjevina, kukuruz, sezonsko povrće</span
+                  ><span data-lang="en">Tuna, corn, seasonal vegetables</span>
+                </div>
+              </div>
+              <div class="dish-price">730 <small>rsd</small></div>
             </div>
           </div>
         </div>
         <!-- /predjela -->
 
-        <!-- ===== RIBA ===== -->
-        <div class="menu-panel" id="p-riba" role="tabpanel">
+        <!-- ===================================================
+         TAB 3: SALATE & HLEB / SALADS & BREAD
+    =================================================== -->
+        <div class="menu-panel" id="p-salate" role="tabpanel">
           <div class="menu-grid">
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Smuđ 1kg</span
-                  ><span data-lang="en">Zander 1kg</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Svež smuđ iz jezera Kudreč, prilog po izboru</span
-                  ><span data-lang="en"
-                    >Fresh zander from Lake Kudreč, side of choice</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">3.200 <small>rsd</small></div>
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Salate</span
+                ><span data-lang="en">— Salads</span></span
+              >
             </div>
 
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Som 1kg</span
-                  ><span data-lang="en">Catfish 1kg</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Svež som, prilog po izboru</span
-                  ><span data-lang="en">Fresh catfish, side of choice</span>
-                </div>
-              </div>
-              <div class="dish-price">3.200 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Smuđ fileti 1kg</span
-                  ><span data-lang="en">Zander Fillets 1kg</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Filetirani smuđ bez kostiju, prilog po izboru</span
-                  ><span data-lang="en"
-                    >Boneless zander fillets, side of choice</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">4.000 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Pastrmka fileti 1kg</span
-                  ><span data-lang="en">Trout Fillets 1kg</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Filetirani filetirani pastrmka, prilog po izboru</span
-                  ><span data-lang="en"
-                    >Boneless trout fillets, side of choice</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">4.000 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Šaran 1kg</span
-                  ><span data-lang="en">Carp 1kg</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Svež šaran iz jezera, prilog po izboru</span
-                  ><span data-lang="en">Fresh lake carp, side of choice</span>
-                </div>
-              </div>
-              <div class="dish-price">2.900 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Orada porcija 450g</span
-                  ><span data-lang="en">Sea Bream 450g</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Morska orada na žaru, maslinovo ulje, limun, prilog</span
-                  ><span data-lang="en"
-                    >Grilled sea bream, olive oil, lemon, side dish</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">1.200 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Brancin porcija 450g</span
-                  ><span data-lang="en">Sea Bass 450g</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Morski brancin na žaru, maslinovo ulje, limun, prilog</span
-                  ><span data-lang="en"
-                    >Grilled sea bass, olive oil, lemon, side dish</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">1.200 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Girice 300g</span
-                  ><span data-lang="en">Whitebait 300g</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Pohovanje girice, limun, tartar sos</span
-                  ><span data-lang="en"
-                    >Fried whitebait, lemon, tartare sauce</span
-                  >
+                  <span data-lang="sr">Šopska salata</span
+                  ><span data-lang="en">Shopska Salad</span>
                 </div>
               </div>
               <div class="dish-price">380 <small>rsd</small></div>
             </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Srpska salata</span
+                  ><span data-lang="en">Serbian Salad</span>
+                </div>
+              </div>
+              <div class="dish-price">360 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Grčka salata</span
+                  ><span data-lang="en">Greek Salad</span>
+                </div>
+              </div>
+              <div class="dish-price">570 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Paradajz salata</span
+                  ><span data-lang="en">Tomato Salad</span>
+                </div>
+              </div>
+              <div class="dish-price">340 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Paradajz sa lukom</span
+                  ><span data-lang="en">Tomato with Onion</span>
+                </div>
+              </div>
+              <div class="dish-price">350 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Paradajz sa sirom</span
+                  ><span data-lang="en">Tomato with Cheese</span>
+                </div>
+              </div>
+              <div class="dish-price">380 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Kupus salata</span
+                  ><span data-lang="en">Cabbage Salad</span>
+                </div>
+              </div>
+              <div class="dish-price">300 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Miks zelenih salata</span
+                  ><span data-lang="en">Mixed Greens</span>
+                </div>
+              </div>
+              <div class="dish-price">350 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Krompir salata</span
+                  ><span data-lang="en">Potato Salad</span>
+                </div>
+              </div>
+              <div class="dish-price">300 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Belolučena ljuta paprika</span
+                  ><span data-lang="en">Garlic Hot Peppers</span>
+                </div>
+              </div>
+              <div class="dish-price">140 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Belolučena slatka paprika</span
+                  ><span data-lang="en">Garlic Sweet Peppers</span>
+                </div>
+              </div>
+              <div class="dish-price">150 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Sveža ljuta paprika</span
+                  ><span data-lang="en">Fresh Hot Peppers</span>
+                </div>
+              </div>
+              <div class="dish-price">100 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Bellavista bašta salata</span
+                  ><span data-lang="en">Bellavista Garden Salad</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Sezonsko povrće iz naše bašte</span
+                  ><span data-lang="en"
+                    >Seasonal vegetables from our garden</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">700 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Kiseli kupus</span
+                  ><span data-lang="en">Sauerkraut</span>
+                </div>
+              </div>
+              <div class="dish-price">400 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Tiršija</span
+                  ><span data-lang="en">Pickled Vegetables</span>
+                </div>
+              </div>
+              <div class="dish-price">400 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Hleb</span
+                ><span data-lang="en">— Bread</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Lepinja</span
+                  ><span data-lang="en">Flatbread</span>
+                </div>
+              </div>
+              <div class="dish-price">100 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Domaći hleb za dve osobe</span
+                  ><span data-lang="en">Homemade Bread for Two</span>
+                </div>
+              </div>
+              <div class="dish-price">240 <small>rsd</small></div>
+            </div>
           </div>
         </div>
-        <!-- /riba -->
+        <!-- /salate -->
 
-        <!-- ===== PILETINA ===== -->
+        <!-- ===================================================
+         TAB 4: PILETINA & ROŠTILJ / CHICKEN & GRILL
+    =================================================== -->
         <div class="menu-panel" id="p-piletina" role="tabpanel">
           <div class="menu-grid">
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Jela od piletine</span
+                ><span data-lang="en">— Chicken Dishes</span></span
+              >
+            </div>
+
             <div class="menu-row">
               <div>
                 <div class="dish-name">
@@ -1053,7 +1483,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">780 <small>rsd</small></div>
+              <div class="dish-price">850 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1073,7 +1503,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">900 <small>rsd</small></div>
+              <div class="dish-price">950 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1084,14 +1514,14 @@
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr"
-                    >Klasična karađorđeva šnicla, kajmak, tartar sos</span
+                    >Klasična karađorđeva šnicla, kajmak, tartare sos</span
                   ><span data-lang="en"
                     >Classic breaded stuffed chicken, kajmak, tartare
                     sauce</span
                   >
                 </div>
               </div>
-              <div class="dish-price">860 <small>rsd</small></div>
+              <div class="dish-price">930 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1108,7 +1538,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">860 <small>rsd</small></div>
+              <div class="dish-price">930 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1119,13 +1549,13 @@
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr"
-                    >Hrskavo pohana piletina, med, senf sos</span
+                    >Hrskavo pohana piletina, med-senf sos</span
                   ><span data-lang="en"
                     >Crispy fried chicken, honey mustard sauce</span
                   >
                 </div>
               </div>
-              <div class="dish-price">880 <small>rsd</small></div>
+              <div class="dish-price">900 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1149,7 +1579,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">930 <small>rsd</small></div>
+              <div class="dish-price">1.000 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1167,7 +1597,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">960 <small>rsd</small></div>
+              <div class="dish-price">950 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1184,7 +1614,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">940 <small>rsd</small></div>
+              <div class="dish-price">950 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1208,7 +1638,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">990 <small>rsd</small></div>
+              <div class="dish-price">1.050 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1225,137 +1655,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">830 <small>rsd</small></div>
-            </div>
-          </div>
-        </div>
-        <!-- /piletina -->
-
-        <!-- ===== ROŠTILJ & SPECIJALITETI ===== -->
-        <div class="menu-panel" id="p-rostilj" role="tabpanel">
-          <div class="menu-grid">
-            <div class="menu-subcat">
-              <span class="menu-subcat-label"
-                ><span data-lang="sr">— Specijalitet kuće</span
-                ><span data-lang="en">— House Specialties</span></span
-              >
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Sablja Bellavista 1.2kg</span
-                  ><span data-lang="en">Bellavista Saber 1.2kg</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Punjena piletina, punjena vešalica, dimljeni batak, svež
-                    vrat, domaća kobasica, domaći krompiri, grilovano
-                    povrće</span
-                  ><span data-lang="en"
-                    >Stuffed chicken, stuffed vešalica, smoked leg, pork neck,
-                    homemade sausage, roast potatoes, grilled vegetables</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">3.300 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Specijalitet Bellavista 2kg</span
-                  ><span data-lang="en">Bellavista Special 2kg</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Punjena piletina, domaće kobasice, gurmanska pljeskavica,
-                    bela vešalica, karađorđeva, svež vrat, grilovano povrće,
-                    domaći krompiri</span
-                  ><span data-lang="en"
-                    >Stuffed chicken, homemade sausages, gourmet patty, white
-                    vešalica, karađorđeva, pork neck, grilled vegetables, roast
-                    potatoes</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">4.300 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Rolovana teletina ispod sača 1kg</span
-                  ><span data-lang="en">Rolled Veal under the Sač 1kg</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Nežna teletina, polako pečena ispod sača, domaći
-                    krompiri</span
-                  ><span data-lang="en"
-                    >Tender veal, slow-roasted under the sač bell, roast
-                    potatoes</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">4.400 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Svinjska rebarca Bellavista 1kg</span
-                  ><span data-lang="en">Bellavista Pork Ribs 1kg</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Marinirani svinjski rebarca, grilovano povrće, domaći
-                    krompiri</span
-                  ><span data-lang="en"
-                    >Marinated pork ribs, grilled vegetables, roast
-                    potatoes</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">4.200 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Zakopano blago 1.2kg</span
-                  ><span data-lang="en">Buried Treasure 1.2kg</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Prepuštamo vama da otkrijete šta se nalazi u našem čunu —
-                    iznenađenje koje se ne zaboravlja</span
-                  ><span data-lang="en"
-                    >We leave it to you to discover what lies in our vessel — a
-                    surprise you won't forget</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">3.900 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Leskovački voz 1.2kg</span
-                  ><span data-lang="en">Leskovac Train 1.2kg</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Leskovački ušteci, bolovan ćevapi, ljuta pljeskavica,
-                    đevrek pljeskavica, domaći krompiri</span
-                  ><span data-lang="en"
-                    >Leskovac ušteci, bolovan ćevapi, spicy patty, ring patty,
-                    roast potatoes</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">2.300 <small>rsd</small></div>
+              <div class="dish-price">880 <small>rsd</small></div>
             </div>
 
             <div class="menu-subcat">
@@ -1380,7 +1680,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">880 <small>rsd</small></div>
+              <div class="dish-price">930 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1391,13 +1691,13 @@
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr"
-                    >Ćevapi serviran na postelji od domaćeg kajmaka</span
+                    >Ćevapi servirani na postelji od domaćeg kajmaka</span
                   ><span data-lang="en"
                     >Ćevapi served on a bed of homemade kajmak</span
                   >
                 </div>
               </div>
-              <div class="dish-price">980 <small>rsd</small></div>
+              <div class="dish-price">1.030 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1414,24 +1714,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">980 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Pljeskavica od pola kile 500g</span
-                  ><span data-lang="en">Half-Kilo Burger Patty 500g</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Masivna pljeskavica za prave gurmane</span
-                  ><span data-lang="en"
-                    >Massive patty for true food lovers</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">1.200 <small>rsd</small></div>
+              <div class="dish-price">1.050 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1448,7 +1731,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">880 <small>rsd</small></div>
+              <div class="dish-price">950 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1459,15 +1742,13 @@
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr"
-                    >Vešalica punjena kajmakom i začinima, prilog po
-                    izboru</span
+                    >Vešalica punjena kajmakom i začinima</span
                   ><span data-lang="en"
-                    >Neck fillet stuffed with kajmak and spices, side of
-                    choice</span
+                    >Neck fillet stuffed with kajmak and spices</span
                   >
                 </div>
               </div>
-              <div class="dish-price">1.100 <small>rsd</small></div>
+              <div class="dish-price">1.200 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1484,14 +1765,14 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">900 <small>rsd</small></div>
+              <div class="dish-price">990 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
               <div>
                 <div class="dish-name">
                   <span data-lang="sr">Đevrek pljeskavica 300g</span
-                  ><span data-lang="en">Ring-shaped Burger Patty 300g</span>
+                  ><span data-lang="en">Ring Burger Patty 300g</span>
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr"
@@ -1501,7 +1782,7 @@
                   >
                 </div>
               </div>
-              <div class="dish-price">940 <small>rsd</small></div>
+              <div class="dish-price">990 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1511,14 +1792,11 @@
                   ><span data-lang="en">Gourmet Burger Patty 300g</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Posebna mešavina, gurmanski začini, prilog po izboru</span
-                  ><span data-lang="en"
-                    >Special blend, gourmet spices, side of choice</span
-                  >
+                  <span data-lang="sr">Posebna mešavina, gurmanski začini</span
+                  ><span data-lang="en">Special blend, gourmet spices</span>
                 </div>
               </div>
-              <div class="dish-price">870 <small>rsd</small></div>
+              <div class="dish-price">950 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1531,19 +1809,533 @@
                   <span data-lang="sr"
                     >Domaće kobasice po staroj recepturi, senf, luk</span
                   ><span data-lang="en"
-                    >Homemade sausages by old recipe, mustard, onion</span
+                    >Homemade sausages, old recipe, mustard, onion</span
                   >
                 </div>
               </div>
-              <div class="dish-price">800 <small>rsd</small></div>
+              <div class="dish-price">850 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr"
+                    >Uštipci zapečeni sa ajvarom i kajmakom 350g</span
+                  ><span data-lang="en"
+                    >Baked Uštipci with Ajvar &amp; Kajmak 350g</span
+                  >
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Pečeni uštipci, domaći ajvar, kajmak</span
+                  ><span data-lang="en"
+                    >Baked dough fritters, homemade ajvar, kajmak</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">1.100 <small>rsd</small></div>
             </div>
           </div>
         </div>
-        <!-- /rostilj -->
+        <!-- /piletina -->
 
-        <!-- ===== BURGERI & PRILOZI ===== -->
-        <div class="menu-panel" id="p-burgeri" role="tabpanel">
+        <!-- ===================================================
+         TAB 5: SPECIJALITETI / SPECIALTIES
+    =================================================== -->
+        <div class="menu-panel" id="p-specijaliteti" role="tabpanel">
           <div class="menu-grid">
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Specijalitet kuće</span
+                ><span data-lang="en">— House Specialties</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Sablja Bellavista 1.2kg</span
+                  ><span data-lang="en">Bellavista Saber 1.2kg</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Preporučeno za 2–3 osobe · Punjena piletina, punjena
+                    vešalica, dimljeni batak, sveži vrat, domaća kobasica,
+                    domaći krompir, grilovano povrće</span
+                  ><span data-lang="en"
+                    >Recommended for 2–3 persons · Stuffed chicken, stuffed
+                    vešalica, smoked leg, pork neck, homemade sausage, roast
+                    potatoes, grilled vegetables</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">3.300 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Specijalitet Bellavista 2kg</span
+                  ><span data-lang="en">Bellavista Special 2kg</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Preporučeno za 3–5 osoba · Punjena piletina, ćevapi, domaće
+                    kobasice, gurmanska pljeskavica, bela vešalica, karađorđeva,
+                    svež suvi vrat, grilovano povrće, domaći krompir</span
+                  ><span data-lang="en"
+                    >Recommended for 3–5 persons · Stuffed chicken, ćevapi,
+                    homemade sausages, gourmet patty, white vešalica,
+                    karađorđeva, pork neck, grilled vegetables, roast
+                    potatoes</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">4.700 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Teletina ispod sača 1kg</span
+                  ><span data-lang="en">Veal under the Sač 1kg</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Nežna teletina, polako pečena ispod sača</span
+                  ><span data-lang="en"
+                    >Tender veal, slow-roasted under the sač bell</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">4.900 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr"
+                    >Zapečena butkica u sosu od rena i kajmaka</span
+                  ><span data-lang="en"
+                    >Baked Pork Knuckle in Horseradish &amp; Kajmak Sauce</span
+                  >
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Sočna butkica, kremasti sos od rena i kajmaka</span
+                  ><span data-lang="en"
+                    >Juicy pork knuckle, creamy horseradish and kajmak
+                    sauce</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">1.800 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Zakopano blago 1.2kg</span
+                  ><span data-lang="en">Buried Treasure 1.2kg</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Preporučeno za 2–3 osobe · Prepuštamo vama da otkrijete šta
+                    se nalazi u našem čupu — iznenađenje koje se ne
+                    zaboravlja</span
+                  ><span data-lang="en"
+                    >Recommended for 2–3 persons · We leave it to you to
+                    discover what lies inside — a surprise you won't
+                    forget</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">3.900 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Leskovački voz 1.2kg</span
+                  ><span data-lang="en">Leskovac Train 1.2kg</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Preporučeno za 2–3 osobe · Leskovački uštipci, rolovani
+                    ćevapi, ljuta pljeskavica, đevrek pljeskavica, crni luk,
+                    domaći krompir</span
+                  ><span data-lang="en"
+                    >Recommended for 2–3 persons · Leskovac uštipci, rolled
+                    ćevapi, spicy patty, ring patty, onion, roast potatoes</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">3.100 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Kuvarov potpis</span
+                ><span data-lang="en">— Chef's Signature</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Baby pig</span
+                  ><span data-lang="en">Baby Pig</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Sočno i otkošteno meso mladog praseta pažljivo pečeno do
+                    zlatne hrskave korice · Preporučeno za 6–10 osoba · Obavezna
+                    rezervacija dan ranije</span
+                  ><span data-lang="en"
+                    >Juicy boneless young pig meat, slowly roasted to a golden
+                    crispy crust · Recommended for 6–10 persons · Reservation
+                    required one day in advance</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">15.000 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr"
+                    >Hrskave praseće bajadere za dve osobe</span
+                  ><span data-lang="en">Crispy Pork Belly for Two</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Prilog: kuvani krompir punjen kajmakom</span
+                  ><span data-lang="en"
+                    >Side: boiled potato stuffed with kajmak</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">2.500 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Dimljena butkica za dve osobe</span
+                  ><span data-lang="en">Smoked Pork Knuckle for Two</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Sos od cvekle, pečene jabuke i rena</span
+                  ><span data-lang="en"
+                    >Beetroot sauce, baked apple and horseradish</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">2.800 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Svinjski file punjen suvim šljivama</span
+                  ><span data-lang="en"
+                    >Pork Tenderloin stuffed with Dried Plums</span
+                  >
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Taljatele, gorgonzola sos</span
+                  ><span data-lang="en">Tagliatelle, gorgonzola sauce</span>
+                </div>
+              </div>
+              <div class="dish-price">1.800 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr"
+                    >Svinjski file punjen sušenim paradajzom i dimljenim
+                    sirom</span
+                  ><span data-lang="en"
+                    >Pork Tenderloin stuffed with Sun-dried Tomatoes &amp;
+                    Smoked Cheese</span
+                  >
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Domaći pire, čedar sos</span
+                  ><span data-lang="en">Homemade mash, cheddar sauce</span>
+                </div>
+              </div>
+              <div class="dish-price">1.400 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Pljeskavica tartufata 300g</span
+                  ><span data-lang="en">Truffle Burger Patty 300g</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Juneće meso, tortilja, jaje, sos od belih tartufa, čedar
+                    sos</span
+                  ><span data-lang="en"
+                    >Beef, tortilla, egg, white truffle sauce, cheddar
+                    sauce</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">1.600 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Bellavista ukusa 300</span
+                  ><span data-lang="en">Bellavista Taste 300</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Punjena piletina, punjena vešalica, punjeni ćevap, hajdučki
+                    ražnjić, punjeni krompir sa kajmakom i slaninicom</span
+                  ><span data-lang="en"
+                    >Stuffed chicken, stuffed vešalica, stuffed ćevap, hajduk
+                    skewer, potato stuffed with kajmak &amp; bacon</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">6.000 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Spremano s ljubavlju</span
+                ><span data-lang="en">— Made with Love</span></span
+              >
+            </div>
+
+            <p
+              class="menu-footnote"
+              style="text-align: left; padding: 0.5rem 2.8rem 1rem"
+            >
+              <span data-lang="sr"
+                >★ Pitajte konobara za dnevnu ponudu — jela se menjaju u
+                zavisnosti od dostupnosti namirnica</span
+              >
+              <span data-lang="en"
+                >★ Ask your waiter for today's selection — dishes change based
+                on ingredient availability</span
+              >
+            </p>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Sarma</span
+                  ><span data-lang="en">Stuffed Cabbage Rolls</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">3 sarme, domaći pire krompir</span
+                  ><span data-lang="en">3 rolls, homemade mashed potatoes</span>
+                </div>
+              </div>
+              <div class="dish-price">700 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Tavče na gravče</span
+                  ><span data-lang="en">Baked Beans Macedonian Style</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Pečeni pasulj sa povrćem i začinima</span
+                  ><span data-lang="en"
+                    >Oven-baked beans with vegetables and spices</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">700 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Juneći gulaš</span
+                  ><span data-lang="en">Beef Goulash</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Sočno junece meso, paprika, domaći pire</span
+                  ><span data-lang="en"
+                    >Juicy beef, peppers, homemade mash</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">750 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Podvarak sa slaninom</span
+                  ><span data-lang="en">Sauerkraut with Bacon</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Kiseli kupus, dimljena slanina, začini</span
+                  ><span data-lang="en">Sauerkraut, smoked bacon, spices</span>
+                </div>
+              </div>
+              <div class="dish-price">700 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Ćufte u paradajz sosu sa pireom</span
+                  ><span data-lang="en"
+                    >Meatballs in Tomato Sauce with Mash</span
+                  >
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Domaće ćufte, paradajz sos, kremasti pire</span
+                  ><span data-lang="en"
+                    >Homemade meatballs, tomato sauce, creamy mash</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">700 <small>rsd</small></div>
+            </div>
+          </div>
+        </div>
+        <!-- /specijaliteti -->
+
+        <!-- ===================================================
+         TAB 6: RIBA & BURGERI / FISH & BURGERS
+    =================================================== -->
+        <div class="menu-panel" id="p-riba" role="tabpanel">
+          <div class="menu-grid">
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Riba</span
+                ><span data-lang="en">— Fish</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Smuđ 1kg</span
+                  ><span data-lang="en">Zander 1kg</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Svež smuđ iz jezera Kudreč, prilog po izboru</span
+                  ><span data-lang="en"
+                    >Fresh zander from Lake Kudreč, side of choice</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">3.500 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Som 1kg</span
+                  ><span data-lang="en">Catfish 1kg</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Svež som, prilog po izboru</span
+                  ><span data-lang="en">Fresh catfish, side of choice</span>
+                </div>
+              </div>
+              <div class="dish-price">3.500 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Pastrmka fileti 1kg</span
+                  ><span data-lang="en">Trout Fillets 1kg</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Filetirani fileti pastrmke bez kostiju</span
+                  ><span data-lang="en">Boneless trout fillets</span>
+                </div>
+              </div>
+              <div class="dish-price">4.000 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Šaran 1kg</span
+                  ><span data-lang="en">Carp 1kg</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Svež šaran iz jezera, prilog po izboru</span
+                  ><span data-lang="en">Fresh lake carp, side of choice</span>
+                </div>
+              </div>
+              <div class="dish-price">3.200 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Orada porcija 450g</span
+                  ><span data-lang="en">Sea Bream 450g</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Morska orada na žaru, maslinovo ulje, limun</span
+                  ><span data-lang="en"
+                    >Grilled sea bream, olive oil, lemon</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">1.400 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Brancin porcija 450g</span
+                  ><span data-lang="en">Sea Bass 450g</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Morski brancin na žaru, maslinovo ulje, limun</span
+                  ><span data-lang="en"
+                    >Grilled sea bass, olive oil, lemon</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">1.700 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Girice 300g</span
+                  ><span data-lang="en">Whitebait 300g</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Pohovane girice, limun, tartare sos</span
+                  ><span data-lang="en"
+                    >Fried whitebait, lemon, tartare sauce</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">380 <small>rsd</small></div>
+            </div>
+
             <div class="menu-subcat">
               <span class="menu-subcat-label"
                 ><span data-lang="sr">— Burgeri</span
@@ -1560,7 +2352,7 @@
                 <div class="dish-desc">
                   <span data-lang="sr"
                     >Pileća pljeskavica, iceberg salata, paradajz, crveni luk,
-                    dressing, kiseli krastavci</span
+                    dresing, kiseli krastavčići</span
                   ><span data-lang="en"
                     >Chicken patty, iceberg lettuce, tomato, red onion,
                     dressing, pickles</span
@@ -1578,11 +2370,11 @@
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr"
-                    >Dupla junećа pljeskavica, iceberg salata, paradajz, crveni
-                    luk, crispy slanina, čedar, slatkasti luk</span
+                    >Dupla juneća pljeskavica, iceberg salata, paradajz, crveni
+                    luk, crispy slaninica, čedar sir, hrskavi luk</span
                   ><span data-lang="en"
                     >Double beef patty, iceberg lettuce, tomato, red onion,
-                    crispy bacon, cheddar, caramelized onion</span
+                    crispy bacon, cheddar, crispy onion</span
                   >
                 </div>
               </div>
@@ -1602,12 +2394,8 @@
                   <span data-lang="sr">Pomfrit 200g</span
                   ><span data-lang="en">French Fries 200g</span>
                 </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Hrskavi pomfrit</span
-                  ><span data-lang="en">Crispy french fries</span>
-                </div>
               </div>
-              <div class="dish-price">300 <small>rsd</small></div>
+              <div class="dish-price">400 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1616,13 +2404,8 @@
                   <span data-lang="sr">Vedžis 200g</span
                   ><span data-lang="en">Wedges 200g</span>
                 </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Pečeni krompir u ljusci, začinsko bilje</span
-                  ><span data-lang="en">Baked potato wedges, herbs</span>
-                </div>
               </div>
-              <div class="dish-price">300 <small>rsd</small></div>
+              <div class="dish-price">400 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1631,15 +2414,8 @@
                   <span data-lang="sr">Grilovano povrće 250g</span
                   ><span data-lang="en">Grilled Vegetables 250g</span>
                 </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Sezonsko povrće na žaru, maslinovo ulje, začini</span
-                  ><span data-lang="en"
-                    >Seasonal grilled vegetables, olive oil, spices</span
-                  >
-                </div>
               </div>
-              <div class="dish-price">430 <small>rsd</small></div>
+              <div class="dish-price">490 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
@@ -1648,44 +2424,6 @@
                   <span data-lang="sr">Dalmatinsko varivo 250g</span
                   ><span data-lang="en">Dalmatian Stew 250g</span>
                 </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Blitva s krompirima, maslinovo ulje, beli luk</span
-                  ><span data-lang="en"
-                    >Swiss chard with potatoes, olive oil, garlic</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">350 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Urnebes 200g</span
-                  ><span data-lang="en">Urnebes Spicy Spread 200g</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Začinjeni sir sa paprikom, domaći recept</span
-                  ><span data-lang="en"
-                    >Spicy cheese spread with peppers, homemade recipe</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">350 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Kajmak 150g</span
-                  ><span data-lang="en">Kajmak 150g</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Domaći svež kajmak</span
-                  ><span data-lang="en">Fresh homemade kajmak cream</span>
-                </div>
               </div>
               <div class="dish-price">400 <small>rsd</small></div>
             </div>
@@ -1693,41 +2431,958 @@
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Domaći sir 200g</span
-                  ><span data-lang="en">Homemade Cheese 200g</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Domaći beli sir iz salamure</span
-                  ><span data-lang="en">Homemade white brined cheese</span>
+                  <span data-lang="sr">Kečap</span
+                  ><span data-lang="en">Ketchup</span>
                 </div>
               </div>
-              <div class="dish-price">400 <small>rsd</small></div>
+              <div class="dish-price">70 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Majonez</span
+                  ><span data-lang="en">Mayonnaise</span>
+                </div>
+              </div>
+              <div class="dish-price">70 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Marinada</span
+                  ><span data-lang="en">Marinade</span>
+                </div>
+              </div>
+              <div class="dish-price">120 <small>rsd</small></div>
             </div>
           </div>
         </div>
-        <!-- /burgeri -->
+        <!-- /riba -->
 
-        <!-- ===== PIĆA ===== -->
-        <div class="menu-panel" id="p-pica" role="tabpanel">
+        <!-- ===================================================
+         TAB 7: DESERTI / DESSERTS
+    =================================================== -->
+        <div class="menu-panel" id="p-deserti" role="tabpanel">
           <div class="menu-grid">
-            <!-- RAZDELNIK: ALKOHOLNA PIĆA -->
-            <div class="menu-cat">
-              <span class="menu-cat-label">
-                <span data-lang="sr">Alkoholna pića</span>
-                <span data-lang="en">Alcoholic beverages</span>
-              </span>
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Cheese cake</span
+                  ><span data-lang="en">Cheesecake</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Kremasti cheesecake, voćni preliv</span
+                  ><span data-lang="en">Creamy cheesecake, fruit topping</span>
+                </div>
+              </div>
+              <div class="dish-price">450 <small>rsd</small></div>
             </div>
 
-            <!-- VINA -->
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Tulumbe</span
+                  ><span data-lang="en">Tulumbe</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Prženo testo u šećernom sirupu</span
+                  ><span data-lang="en">Fried pastry in sugar syrup</span>
+                </div>
+              </div>
+              <div class="dish-price">320 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Baklava</span
+                  ><span data-lang="en">Baklava</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Lisnato testo, orasi, med</span
+                  ><span data-lang="en">Filo pastry, walnuts, honey</span>
+                </div>
+              </div>
+              <div class="dish-price">300 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Kolač kuće</span
+                  ><span data-lang="en">House Cake</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Pitajte konobara za današnji kolač</span
+                  ><span data-lang="en">Ask your waiter for today's cake</span>
+                </div>
+              </div>
+              <div class="dish-price">450 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Palačinke sa džemom</span
+                  ><span data-lang="en">Crêpes with Jam</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Tanke palačinke sa domaćim džemom</span
+                  ><span data-lang="en">Thin crêpes with homemade jam</span>
+                </div>
+              </div>
+              <div class="dish-price">300 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Palačinke sa kremom i plazmom</span
+                  ><span data-lang="en"
+                    >Crêpes with Cream &amp; Plazma Biscuit</span
+                  >
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Palačinke, vanila krem, zdrobljeni plazma keks</span
+                  ><span data-lang="en"
+                    >Crêpes, vanilla cream, crushed Plazma biscuit</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">350 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Palačinke sa šećerom</span
+                  ><span data-lang="en">Crêpes with Sugar</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Klasične palačinke sa šećerom i limunom</span
+                  ><span data-lang="en"
+                    >Classic crêpes with sugar and lemon</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Palačinke sa medom i orasima</span
+                  ><span data-lang="en">Crêpes with Honey &amp; Walnuts</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Tanke palačinke, domaći med, drobljeni orasi</span
+                  ><span data-lang="en"
+                    >Thin crêpes, homemade honey, crushed walnuts</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">350 <small>rsd</small></div>
+            </div>
+          </div>
+        </div>
+        <!-- /deserti -->
+
+        <!-- ===================================================
+         TAB 8: KAFE & NAPITCI / COFFEE & DRINKS
+    =================================================== -->
+        <div class="menu-panel" id="p-kafe" role="tabpanel">
+          <div class="menu-grid">
             <div class="menu-subcat">
               <span class="menu-subcat-label"
-                ><span data-lang="sr">— Selekcija Premium Radovanović Vina</span
-                ><span data-lang="en"
-                  >— Premium Radovanović Wine Selection</span
-                ></span
+                ><span data-lang="sr">— Topli napitci</span
+                ><span data-lang="en">— Hot Drinks</span></span
               >
             </div>
 
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Espresso</span
+                  ><span data-lang="en">Espresso</span>
+                </div>
+              </div>
+              <div class="dish-price">160 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Espresso sa mlekom</span
+                  ><span data-lang="en">Espresso with Milk</span>
+                </div>
+              </div>
+              <div class="dish-price">180 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Latte caffe</span
+                  ><span data-lang="en">Latte</span>
+                </div>
+              </div>
+              <div class="dish-price">200 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Cappuccino</span
+                  ><span data-lang="en">Cappuccino</span>
+                </div>
+              </div>
+              <div class="dish-price">180 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Nescafé</span
+                  ><span data-lang="en">Nescafé</span>
+                </div>
+              </div>
+              <div class="dish-price">200 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Domaća kafa</span
+                  ><span data-lang="en">Serbian Coffee</span>
+                </div>
+              </div>
+              <div class="dish-price">145 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Domaća kafa sa mlekom</span
+                  ><span data-lang="en">Serbian Coffee with Milk</span>
+                </div>
+              </div>
+              <div class="dish-price">165 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Čaj</span><span data-lang="en">Tea</span>
+                </div>
+              </div>
+              <div class="dish-price">150 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Med</span
+                  ><span data-lang="en">Honey</span>
+                </div>
+              </div>
+              <div class="dish-price">50 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Kuvano vino</span
+                  ><span data-lang="en">Mulled Wine</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Toplo vino sa začinima, cimet, karanfilić</span
+                  ><span data-lang="en"
+                    >Warm spiced wine, cinnamon, cloves</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">350 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Sokovi i vode</span
+                ><span data-lang="en">— Juices &amp; Water</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Gazirani sokovi flašice 0.25l</span
+                  ><span data-lang="en">Sparkling Juices 0.25l</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Pepsi, Pepsi Zero / Max, 7Up, Mirinda, Evervess</span
+                  ><span data-lang="en"
+                    >Pepsi, Pepsi Zero / Max, 7Up, Mirinda, Evervess</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Negazirani sokovi flašice 0.25l</span
+                  ><span data-lang="en">Still Juices 0.25l</span>
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Aqua Viva 0.25l</span
+                  ><span data-lang="en">Aqua Viva 0.25l (Sparkling)</span>
+                </div>
+              </div>
+              <div class="dish-price">170 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Knjaz Miloš 0.25l</span
+                  ><span data-lang="en">Knjaz Miloš 0.25l (Still)</span>
+                </div>
+              </div>
+              <div class="dish-price">170 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Aqua Viva 0.7l</span
+                  ><span data-lang="en">Aqua Viva 0.7l (Sparkling)</span>
+                </div>
+              </div>
+              <div class="dish-price">320 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Knjaz Miloš 0.7l</span
+                  ><span data-lang="en">Knjaz Miloš 0.7l (Still)</span>
+                </div>
+              </div>
+              <div class="dish-price">320 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Guarana 0.25l</span
+                  ><span data-lang="en">Guarana 0.25l</span>
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Orangina 0.25l</span
+                  ><span data-lang="en">Orangina 0.25l</span>
+                </div>
+              </div>
+              <div class="dish-price">280 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Limona 0.25l</span
+                  ><span data-lang="en">Limona 0.25l</span>
+                </div>
+              </div>
+              <div class="dish-price">280 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Red Bull 0.25l</span
+                  ><span data-lang="en">Red Bull 0.25l</span>
+                </div>
+              </div>
+              <div class="dish-price">370 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Hladni napitci</span
+                ><span data-lang="en">— Cold Drinks</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Plazma shake</span
+                  ><span data-lang="en">Plazma Shake</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Hladan shake od Plazma keksa</span
+                  ><span data-lang="en">Cold shake with Plazma biscuit</span>
+                </div>
+              </div>
+              <div class="dish-price">350 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Ice coffee</span
+                  ><span data-lang="en">Iced Coffee</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Hladan espresso, led, mleko po izboru</span
+                  ><span data-lang="en"
+                    >Cold espresso, ice, milk of choice</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">230 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Ceđeni sokovi</span
+                ><span data-lang="en">— Fresh Squeezed Juices</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Limunada 0.33l</span
+                  ><span data-lang="en">Lemonade 0.33l</span>
+                </div>
+              </div>
+              <div class="dish-price">220 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Ceđena pomorandža 0.33l</span
+                  ><span data-lang="en">Fresh Orange Juice 0.33l</span>
+                </div>
+              </div>
+              <div class="dish-price">330 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Citrus mix 0.33l</span
+                  ><span data-lang="en">Citrus Mix 0.33l</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Grejp, pomorandža, limun</span
+                  ><span data-lang="en">Grapefruit, orange, lemon</span>
+                </div>
+              </div>
+              <div class="dish-price">370 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Imuno mix 0.33l</span
+                  ><span data-lang="en">Immunity Mix 0.33l</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Jabuka, šargarepa, pomorandža</span
+                  ><span data-lang="en">Apple, carrot, orange</span>
+                </div>
+              </div>
+              <div class="dish-price">370 <small>rsd</small></div>
+            </div>
+          </div>
+        </div>
+        <!-- /kafe -->
+
+        <!-- ===================================================
+         TAB 9: ALKOHOLNA PIĆA / ALCOHOLIC
+    =================================================== -->
+        <div class="menu-panel" id="p-alkohol" role="tabpanel">
+          <div class="menu-grid">
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Piva</span
+                ><span data-lang="en">— Beers</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Lav Premium 0.33l</span
+                  ><span data-lang="en">Lav Premium 0.33l</span>
+                </div>
+              </div>
+              <div class="dish-price">270 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Tuborg 0.33l</span
+                  ><span data-lang="en">Tuborg 0.33l</span>
+                </div>
+              </div>
+              <div class="dish-price">310 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Carlsberg 0.25l</span
+                  ><span data-lang="en">Carlsberg 0.25l</span>
+                </div>
+              </div>
+              <div class="dish-price">330 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Kronenbourg 1664 Blanc 0.33l</span
+                  ><span data-lang="en">Kronenbourg 1664 Blanc 0.33l</span>
+                </div>
+              </div>
+              <div class="dish-price">330 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Budweiser 0.33l</span
+                  ><span data-lang="en">Budweiser 0.33l</span>
+                </div>
+              </div>
+              <div class="dish-price">330 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">San Miguel 0.33l</span
+                  ><span data-lang="en">San Miguel 0.33l</span>
+                </div>
+              </div>
+              <div class="dish-price">440 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Točeno Lav Premium 0.3l</span
+                  ><span data-lang="en">Draft Lav Premium 0.3l</span>
+                </div>
+              </div>
+              <div class="dish-price">230 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Točeno Lav Premium 0.5l</span
+                  ><span data-lang="en">Draft Lav Premium 0.5l</span>
+                </div>
+              </div>
+              <div class="dish-price">310 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Žestoka pića</span
+                ><span data-lang="en">— Spirits</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Vodka 0.03l</span
+                  ><span data-lang="en">Vodka 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">180 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Džin 0.03l</span
+                  ><span data-lang="en">Gin 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">180 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Gorki list 0.03l</span
+                  ><span data-lang="en">Gorki List 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">180 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Vinjak 0.03l</span
+                  ><span data-lang="en">Vinjak 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">170 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Vermouth 0.03l</span
+                  ><span data-lang="en">Vermouth 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">180 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Smirnoff 0.03l</span
+                  ><span data-lang="en">Smirnoff 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Belvedere 0.03l</span
+                  ><span data-lang="en">Belvedere 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">550 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Grey Goose 0.03l</span
+                  ><span data-lang="en">Grey Goose 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">550 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Tekila 0.03l</span
+                  ><span data-lang="en">Tequila 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Johnnie Walker 0.03l</span
+                  ><span data-lang="en">Johnnie Walker 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">260 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Black Label Johnnie Walker 0.03l</span
+                  ><span data-lang="en">Black Label Johnnie Walker 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">410 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Ballantine's 0.03l</span
+                  ><span data-lang="en">Ballantine's 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">260 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Jameson 0.03l</span
+                  ><span data-lang="en">Jameson 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">290 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Jack Daniel's 0.03l</span
+                  ><span data-lang="en">Jack Daniel's 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">320 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Chivas Regal 0.03l</span
+                  ><span data-lang="en">Chivas Regal 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">390 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Martini Bianco 0.03l</span
+                  ><span data-lang="en">Martini Bianco 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Baileys 0.03l</span
+                  ><span data-lang="en">Baileys 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Campari 0.03l</span
+                  ><span data-lang="en">Campari 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Courvoisier 0.03l</span
+                  ><span data-lang="en">Courvoisier 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">500 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Selekcija domaćih rakija</span
+                ><span data-lang="en">— Homemade Brandy Selection</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Dostojna šljiva 0.03l</span
+                  ><span data-lang="en">Dostojna Plum Brandy 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Dostojna viljamovka 0.03l</span
+                  ><span data-lang="en"
+                    >Dostojna Williams Pear Brandy 0.03l</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Vesić kajsija 0.03l</span
+                  ><span data-lang="en">Vesić Apricot Brandy 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">230 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Vesić dunja 0.03l</span
+                  ><span data-lang="en">Vesić Quince Brandy 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">230 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Vesić šljiva 6 0.03l</span
+                  ><span data-lang="en">Vesić Plum Brandy 6yr 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Vesić šljiva 10 0.03l</span
+                  ><span data-lang="en">Vesić Plum Brandy 10yr 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">380 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Vesić liker od maline 0.03l</span
+                  ><span data-lang="en">Vesić Raspberry Liqueur 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">230 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Vesić medovača 0.03l</span
+                  ><span data-lang="en">Vesić Honey Brandy 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">230 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Pevac šljiva 0.03l</span
+                  ><span data-lang="en">Pevac Plum Brandy 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Pevac dunja 0.03l</span
+                  ><span data-lang="en">Pevac Quince Brandy 0.03l</span>
+                </div>
+              </div>
+              <div class="dish-price">250 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Kokteli Bellavista</span
+                ><span data-lang="en">— Bellavista Cocktails</span></span
+              >
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Blue Lagoon</span
+                  ><span data-lang="en">Blue Lagoon</span>
+                </div>
+              </div>
+              <div class="dish-price">480 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Long Island</span
+                  ><span data-lang="en">Long Island Iced Tea</span>
+                </div>
+              </div>
+              <div class="dish-price">700 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Sex on the Beach</span
+                  ><span data-lang="en">Sex on the Beach</span>
+                </div>
+              </div>
+              <div class="dish-price">480 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Tequila Sunrise</span
+                  ><span data-lang="en">Tequila Sunrise</span>
+                </div>
+              </div>
+              <div class="dish-price">480 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Mai Tai</span
+                  ><span data-lang="en">Mai Tai</span>
+                </div>
+              </div>
+              <div class="dish-price">700 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-subcat">
+              <span class="menu-subcat-label"
+                ><span data-lang="sr">— Selekcija vina</span
+                ><span data-lang="en">— Wine Selection</span></span
+              >
+            </div>
+
+            <!-- Radovanović -->
             <div class="menu-row">
               <div>
                 <div class="dish-name">
@@ -1735,11 +3390,8 @@
                   ><span data-lang="en">Chardonnay Radovanović 0.7l</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Belo suvo vino, elegantno i mineralno</span
-                  ><span data-lang="en"
-                    >Dry white wine, elegant and mineral</span
-                  >
+                  <span data-lang="sr">Belo suvo, elegantno i mineralno</span
+                  ><span data-lang="en">Dry white, elegant and mineral</span>
                 </div>
               </div>
               <div class="dish-price">2.600 <small>rsd</small></div>
@@ -1779,7 +3431,7 @@
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Rose Radovanović 0.7l</span
+                  <span data-lang="sr">Rosé Radovanović 0.7l</span
                   ><span data-lang="en">Rosé Radovanović 0.7l</span>
                 </div>
                 <div class="dish-desc">
@@ -1801,10 +3453,9 @@
                   >
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Premium bela selekcija, bogato telo, zlatna boja</span
+                  <span data-lang="sr">Premium bela selekcija, bogato telo</span
                   ><span data-lang="en"
-                    >Premium white selection, rich body, golden colour</span
+                    >Premium white selection, rich body</span
                   >
                 </div>
               </div>
@@ -1828,16 +3479,7 @@
               <div class="dish-price">4.000 <small>rsd</small></div>
             </div>
 
-            <div class="menu-subcat">
-              <span class="menu-subcat-label"
-                ><span data-lang="sr"
-                  >— Selekcija Premium Aleksandrović Vina</span
-                ><span data-lang="en"
-                  >— Premium Aleksandrović Wine Selection</span
-                ></span
-              >
-            </div>
-
+            <!-- Aleksandrović -->
             <div class="menu-row">
               <div>
                 <div class="dish-name">
@@ -1848,7 +3490,7 @@
                   <span data-lang="sr"
                     >Crveno, voćne note, barikiran, puno telo</span
                   ><span data-lang="en"
-                    >Red wine, fruity notes, oak-aged, full body</span
+                    >Red, fruity notes, oak-aged, full body</span
                   >
                 </div>
               </div>
@@ -1863,9 +3505,7 @@
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr">Crveno, elegantna struktura, tanini</span
-                  ><span data-lang="en"
-                    >Red wine, elegant structure, tannins</span
-                  >
+                  ><span data-lang="en">Red, elegant structure, tannins</span>
                 </div>
               </div>
               <div class="dish-price">3.000 <small>rsd</small></div>
@@ -1881,39 +3521,43 @@
                   <span data-lang="sr"
                     >Flagship crveno vino, kompleksno i dugotrajno</span
                   ><span data-lang="en"
-                    >Flagship red wine, complex and long-lingering</span
+                    >Flagship red, complex and long-lingering</span
                   >
                 </div>
               </div>
               <div class="dish-price">4.000 <small>rsd</small></div>
             </div>
 
-            <div class="menu-subcat">
-              <span class="menu-subcat-label"
-                ><span data-lang="sr">— Selekcija Premium Tikveš Vina</span
-                ><span data-lang="en"
-                  >— Premium Tikveš Wine Selection</span
-                ></span
-              >
+            <!-- Žir -->
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Morava Žir 0.7l</span
+                  ><span data-lang="en">Morava Žir 0.7l</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Belo vino, vinarija Žir</span
+                  ><span data-lang="en">White wine, Žir winery</span>
+                </div>
+              </div>
+              <div class="dish-price">2.500 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Luda Mara Chardonnay 0.7l</span
-                  ><span data-lang="en">Luda Mara Chardonnay 0.7l</span>
+                  <span data-lang="sr">Sauvignon Žir 0.7l</span
+                  ><span data-lang="en">Sauvignon Žir 0.7l</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Belo suvo, egzotično voće, kremasta tekstura</span
-                  ><span data-lang="en"
-                    >Dry white, exotic fruit, creamy texture</span
-                  >
+                  <span data-lang="sr">Sauvignon blanc, vinarija Žir</span
+                  ><span data-lang="en">Sauvignon blanc, Žir winery</span>
                 </div>
               </div>
-              <div class="dish-price">2.600 <small>rsd</small></div>
+              <div class="dish-price">2.500 <small>rsd</small></div>
             </div>
 
+            <!-- Tikveš -->
             <div class="menu-row">
               <div>
                 <div class="dish-name">
@@ -1922,7 +3566,7 @@
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr"
-                    >Aromatično belo, muskatne i cvjetne note</span
+                    >Aromatično belo, muskatne i cvetne note</span
                   ><span data-lang="en"
                     >Aromatic white, muscat and floral notes</span
                   >
@@ -1934,52 +3578,35 @@
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Luda Mara Cabernet 0.7l</span
-                  ><span data-lang="en">Luda Mara Cabernet 0.7l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Crno suvo, ribizle, vanila, čokolada</span
-                  ><span data-lang="en"
-                    >Dry red, blackcurrant, vanilla, chocolate</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">2.600 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Vino Belo 1l</span
-                  ><span data-lang="en">House White Wine 1l</span>
+                  <span data-lang="sr">Tikveš Smederevka 1l</span
+                  ><span data-lang="en">Tikveš Smederevka 1l</span>
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr">Domaće belo vino</span
-                  ><span data-lang="en">Homemade white wine</span>
+                  ><span data-lang="en">House white wine</span>
                 </div>
               </div>
-              <div class="dish-price">1.000 <small>rsd</small></div>
+              <div class="dish-price">1.300 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Vino Roze 1l</span
-                  ><span data-lang="en">House Rosé Wine 1l</span>
+                  <span data-lang="sr">Tikveš Roze 1l</span
+                  ><span data-lang="en">Tikveš Rosé 1l</span>
                 </div>
                 <div class="dish-desc">
                   <span data-lang="sr">Domaće roze vino</span
-                  ><span data-lang="en">Homemade rosé wine</span>
+                  ><span data-lang="en">House rosé wine</span>
                 </div>
               </div>
-              <div class="dish-price">1.000 <small>rsd</small></div>
+              <div class="dish-price">1.300 <small>rsd</small></div>
             </div>
 
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Vino Vranac 1l</span
+                  <span data-lang="sr">Vranac 1l</span
                   ><span data-lang="en">Vranac Red Wine 1l</span>
                 </div>
                 <div class="dish-desc">
@@ -1987,9 +3614,58 @@
                   ><span data-lang="en">Vranac red wine</span>
                 </div>
               </div>
-              <div class="dish-price">1.000 <small>rsd</small></div>
+              <div class="dish-price">1.300 <small>rsd</small></div>
             </div>
 
+            <!-- Podrum Pevac -->
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Tiho teče — Morava</span
+                  ><span data-lang="en">Tiho Teče — Morava</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Podrum Pevac, belo vino</span
+                  ><span data-lang="en">Podrum Pevac winery, white wine</span>
+                </div>
+              </div>
+              <div class="dish-price">2.900 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Izazov — Tamjanika</span
+                  ><span data-lang="en">Izazov — Tamjanika</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr">Podrum Pevac, aromatično belo</span
+                  ><span data-lang="en"
+                    >Podrum Pevac winery, aromatic white</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">2.900 <small>rsd</small></div>
+            </div>
+
+            <div class="menu-row">
+              <div>
+                <div class="dish-name">
+                  <span data-lang="sr">Prokupac</span
+                  ><span data-lang="en">Prokupac</span>
+                </div>
+                <div class="dish-desc">
+                  <span data-lang="sr"
+                    >Podrum Pevac, autohtona crvena sorta</span
+                  ><span data-lang="en"
+                    >Podrum Pevac winery, indigenous red variety</span
+                  >
+                </div>
+              </div>
+              <div class="dish-price">4.000 <small>rsd</small></div>
+            </div>
+
+            <!-- Penušava -->
             <div class="menu-row">
               <div>
                 <div class="dish-name">
@@ -1997,296 +3673,11 @@
                   ><span data-lang="en">Somersby Cider 0.33l</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr">Jabukovo pivo, osvežavajuće</span
-                  ><span data-lang="en">Apple cider, refreshing</span>
-                </div>
-              </div>
-              <div class="dish-price">290 <small>rsd</small></div>
-            </div>
-
-            <!-- RAKIJE -->
-            <div class="menu-subcat">
-              <span class="menu-subcat-label"
-                ><span data-lang="sr">— Selekcija domaćih rakija</span
-                ><span data-lang="en"
-                  >— Selection of Homemade Brandies</span
-                ></span
-              >
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Dostojna šljiva 0.33l</span
-                  ><span data-lang="en">Worthy Plum Brandy 0.33l</span>
-                </div>
-                <div class="dish-desc">
                   <span data-lang="sr"
-                    >Domaća šljivovica, glatka i aromatična</span
+                    >Jabukovo pivo, penušavo, osvežavajuće</span
                   ><span data-lang="en"
-                    >Homemade plum brandy, smooth and aromatic</span
+                    >Apple cider, sparkling, refreshing</span
                   >
-                </div>
-              </div>
-              <div class="dish-price">200 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Dostojna viljamovka 0.33l</span
-                  ><span data-lang="en">Worthy Williams Pear Brandy 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Rakija od kruške viljamovke, karakteristična aroma</span
-                  ><span data-lang="en"
-                    >Williams pear brandy, characteristic fragrance</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">200 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Domaća rakija od dunje 0.33l</span
-                  ><span data-lang="en">Homemade Quince Brandy 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Aromatična rakija od dunje, zlatna boja</span
-                  ><span data-lang="en"
-                    >Aromatic quince brandy, golden colour</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">200 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Domaća rakija od kajsije 0.33l</span
-                  ><span data-lang="en">Homemade Apricot Brandy 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Nežna rakija od kajsije, voćna i sveža</span
-                  ><span data-lang="en"
-                    >Delicate apricot brandy, fruity and fresh</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">200 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Medovača 0.33l</span
-                  ><span data-lang="en">Honey Brandy 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Rakija sa medom, blaga i slatka</span
-                  ><span data-lang="en">Brandy with honey, mild and sweet</span>
-                </div>
-              </div>
-              <div class="dish-price">230 <small>rsd</small></div>
-            </div>
-
-            <!-- ŽESTOKA PIĆA -->
-            <div class="menu-subcat">
-              <span class="menu-subcat-label"
-                ><span data-lang="sr">— Žestoka pića</span
-                ><span data-lang="en">— Spirits</span></span
-              >
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr"
-                    >Vodka / Džin / Gorki list / Vinjak / Vermouth 0.33l</span
-                  ><span data-lang="en"
-                    >Vodka / Gin / Gorki List / Vinjak / Vermouth 0.33l</span
-                  >
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Osnovna selekcija žestokih pića</span
-                  ><span data-lang="en">Base selection of spirits</span>
-                </div>
-              </div>
-              <div class="dish-price">150 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Smirnoff / Tekila 0.33l</span
-                  ><span data-lang="en">Smirnoff / Tequila 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Premium vodka i tekila</span
-                  ><span data-lang="en">Premium vodka and tequila</span>
-                </div>
-              </div>
-              <div class="dish-price">250 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Belvedere / Grey Goose 0.33l</span
-                  ><span data-lang="en">Belvedere / Grey Goose 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Super premium vodke</span
-                  ><span data-lang="en">Super premium vodkas</span>
-                </div>
-              </div>
-              <div class="dish-price">550 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr"
-                    >Johnie Walker / Ballantine's / Jameson 0.33l</span
-                  ><span data-lang="en"
-                    >Johnie Walker / Ballantine's / Jameson 0.33l</span
-                  >
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Blended i single malt viski</span
-                  ><span data-lang="en">Blended and single malt whisky</span>
-                </div>
-              </div>
-              <div class="dish-price">260–290 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Jack Daniels 0.33l</span
-                  ><span data-lang="en">Jack Daniel's 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Tennessee whiskey</span
-                  ><span data-lang="en">Tennessee whiskey</span>
-                </div>
-              </div>
-              <div class="dish-price">320 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Black Johnnie Walker 0.33l</span
-                  ><span data-lang="en">Black Label Johnnie Walker 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Premium blended Scotch whisky</span
-                  ><span data-lang="en">Premium blended Scotch whisky</span>
-                </div>
-              </div>
-              <div class="dish-price">410 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Chivas Regal 0.33l</span
-                  ><span data-lang="en">Chivas Regal 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Škotski blended viski, mekan i kompleksan</span
-                  ><span data-lang="en"
-                    >Scotch blended whisky, smooth and complex</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">390 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr"
-                    >Martini Bianco / Baileys / Campari 0.33l</span
-                  ><span data-lang="en"
-                    >Martini Bianco / Baileys / Campari 0.33l</span
-                  >
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Vermuti i likerska pića</span
-                  ><span data-lang="en">Vermouths and liqueurs</span>
-                </div>
-              </div>
-              <div class="dish-price">230 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Courvoisier 0.33l</span
-                  ><span data-lang="en">Courvoisier 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Premium francuski konjak</span
-                  ><span data-lang="en">Premium French cognac</span>
-                </div>
-              </div>
-              <div class="dish-price">500 <small>rsd</small></div>
-            </div>
-
-            <!-- PIVA -->
-            <div class="menu-subcat">
-              <span class="menu-subcat-label"
-                ><span data-lang="sr">— Piva</span
-                ><span data-lang="en">— Beers</span></span
-              >
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Lav Premium 0.33l</span
-                  ><span data-lang="en">Lav Premium 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Domaće svetlo pivo</span
-                  ><span data-lang="en">Domestic lager</span>
-                </div>
-              </div>
-              <div class="dish-price">250 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Tuborg 0.33l</span
-                  ><span data-lang="en">Tuborg 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Danska tradicija, svež okus</span
-                  ><span data-lang="en">Danish tradition, fresh taste</span>
-                </div>
-              </div>
-              <div class="dish-price">290 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Calsberg 0.25l</span
-                  ><span data-lang="en">Carlsberg 0.25l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Internacionalno lager pivo</span
-                  ><span data-lang="en">International lager</span>
                 </div>
               </div>
               <div class="dish-price">310 <small>rsd</small></div>
@@ -2295,230 +3686,30 @@
             <div class="menu-row">
               <div>
                 <div class="dish-name">
-                  <span data-lang="sr">Kronenburg 1664 Blanc 0.33l</span
-                  ><span data-lang="en">Kronenbourg 1664 Blanc 0.33l</span>
+                  <span data-lang="sr">Aperol Spritz 0.33l</span
+                  ><span data-lang="en">Aperol Spritz 0.33l</span>
                 </div>
                 <div class="dish-desc">
-                  <span data-lang="sr">Francusko belo pivo, citrusne note</span
-                  ><span data-lang="en">French white beer, citrus notes</span>
+                  <span data-lang="sr">Aperol, prosecco, soda, narandža</span
+                  ><span data-lang="en">Aperol, prosecco, soda, orange</span>
                 </div>
               </div>
-              <div class="dish-price">310 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Budweiser 0.33l</span
-                  ><span data-lang="en">Budweiser 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Američki lager, osvežavajući</span
-                  ><span data-lang="en">American lager, refreshing</span>
-                </div>
-              </div>
-              <div class="dish-price">310 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Točeno Lav Premium 0.3l / 0.5l</span
-                  ><span data-lang="en">Draft Lav Premium 0.3l / 0.5l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Točeno pivo direktno iz bačve</span
-                  ><span data-lang="en"
-                    >Draught beer directly from the keg</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">200 / 280 <small>rsd</small></div>
-            </div>
-
-            <!-- RAZDELNIK: BEZALKOHOLNA PIĆA -->
-            <div class="menu-cat">
-              <span class="menu-cat-label">
-                <span data-lang="sr">Bezalkoholna pića</span>
-                <span data-lang="en">Non-alcoholic beverages</span>
-              </span>
-            </div>
-
-            <!-- CEĐENI SOKOVI & VODA -->
-            <div class="menu-subcat">
-              <span class="menu-subcat-label"
-                ><span data-lang="sr">— Ceđeni sokovi</span
-                ><span data-lang="en">— Fresh Squeezed Juices</span></span
-              >
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Limunada 0.33l</span
-                  ><span data-lang="en">Lemonade 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Svež limun, nana, med</span
-                  ><span data-lang="en">Fresh lemon, mint, honey</span>
-                </div>
-              </div>
-              <div class="dish-price">180 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Ceđena pomorandža 0.33l</span
-                  ><span data-lang="en">Fresh Orange Juice 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Sveže ceđena pomorandža</span
-                  ><span data-lang="en">Freshly squeezed orange</span>
-                </div>
-              </div>
-              <div class="dish-price">280 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Citrus Mix 0.33l</span
-                  ><span data-lang="en">Citrus Mix 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Mešavina ceđenih citrusnih voćki</span
-                  ><span data-lang="en"
-                    >Blend of freshly squeezed citrus fruits</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">300 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Healthy Mix 0.33l</span
-                  ><span data-lang="en">Healthy Mix 0.33l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Ceđeno voće i povrće, vitaminska bomba</span
-                  ><span data-lang="en"
-                    >Squeezed fruits and vegetables, vitamin boost</span
-                  >
-                </div>
-              </div>
-              <div class="dish-price">300 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-subcat">
-              <span class="menu-subcat-label"
-                ><span data-lang="sr">— Sokovi i voda</span
-                ><span data-lang="en">— Juices &amp; Water</span></span
-              >
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Gazirani sokovi flašice 0.25l</span
-                  ><span data-lang="en">Sparkling Juices 0.25l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Razne vrste gaziranih sokova u flašici</span
-                  ><span data-lang="en">Various sparkling juice flavours</span>
-                </div>
-              </div>
-              <div class="dish-price">210 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Negazirani sokovi flašice 0.25l</span
-                  ><span data-lang="en">Still Juices 0.25l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr"
-                    >Razne vrste negaziranih sokova u flašici</span
-                  ><span data-lang="en">Various still juice flavours</span>
-                </div>
-              </div>
-              <div class="dish-price">210 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Aqua Viva 0.25l / 0.7l</span
-                  ><span data-lang="en">Aqua Viva 0.25l / 0.7l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Gazirana mineralna voda</span
-                  ><span data-lang="en">Sparkling mineral water</span>
-                </div>
-              </div>
-              <div class="dish-price">160 / 300 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Knjaz Miloš 0.25l / 0.7l</span
-                  ><span data-lang="en">Knjaz Miloš 0.25l / 0.7l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Negazirana mineralna voda</span
-                  ><span data-lang="en">Still mineral water</span>
-                </div>
-              </div>
-              <div class="dish-price">160 / 300 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Guarana / Orangina / Limona 0.25l</span
-                  ><span data-lang="en">Guarana / Orangina / Limona 0.25l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Osvežavajući gazirani napici</span
-                  ><span data-lang="en">Refreshing carbonated drinks</span>
-                </div>
-              </div>
-              <div class="dish-price">250 <small>rsd</small></div>
-            </div>
-
-            <div class="menu-row">
-              <div>
-                <div class="dish-name">
-                  <span data-lang="sr">Red Bull 0.25l</span
-                  ><span data-lang="en">Red Bull 0.25l</span>
-                </div>
-                <div class="dish-desc">
-                  <span data-lang="sr">Energetsko piće</span
-                  ><span data-lang="en">Energy drink</span>
-                </div>
-              </div>
-              <div class="dish-price">350 <small>rsd</small></div>
+              <div class="dish-price">450 <small>rsd</small></div>
             </div>
           </div>
 
           <p class="menu-footnote">
             <span data-lang="sr"
               >* Cene su u dinarima i uključuju PDV · Pitajte konobara za dnevne
-              preporuke i dostupnost jela</span
+              preporuke</span
             >
             <span data-lang="en"
               >* Prices in Serbian dinars, VAT included · Ask your waiter for
-              daily recommendations and dish availability</span
+              daily recommendations</span
             >
           </p>
         </div>
-        <!-- /pica -->
+        <!-- /alkohol -->
       </div>
       <!-- /menu-panels -->
     </section>

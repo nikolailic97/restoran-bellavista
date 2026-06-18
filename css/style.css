@@ -22,18 +22,18 @@
    01. CSS VARIABLES & RESET
 ================================================================ */
 :root {
-  --bg: #F4F0E8;
-  --bg-alt: #EDE8DC;
-  --bg-dark: #1A2328;
-  --text: #2C3528;
-  --text-light: #7A7E74;
-  --water: #5B8296;
-  --gold: #B8956A;
-  --gold-light: #D4B48A;
-  --cream: #FAF7F2;
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'DM Sans', system-ui, sans-serif;
-  --script: 'Pinyon Script', cursive;
+  --bg: #f4f0e8;
+  --bg-alt: #ede8dc;
+  --bg-dark: #1a2328;
+  --text: #2c3528;
+  --text-light: #7a7e74;
+  --water: #5b8296;
+  --gold: #b8956a;
+  --gold-light: #d4b48a;
+  --cream: #faf7f2;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "DM Sans", system-ui, sans-serif;
+  --script: "Pinyon Script", cursive;
   --nav-h: 80px;
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --trans: all 0.4s var(--ease);
@@ -202,7 +202,9 @@ body.lang-en small[data-lang="en"] {
   padding: 0 2.5rem;
   display: flex;
   align-items: center;
-  transition: background 0.5s ease, box-shadow 0.5s ease;
+  transition:
+    background 0.5s ease,
+    box-shadow 0.5s ease;
 }
 
 #nav.scrolled {
@@ -227,8 +229,12 @@ body.lang-en small[data-lang="en"] {
   font-weight: 300;
   letter-spacing: 0.2em;
   color: #fff;
-  transition: color 0.4s, text-shadow 0.4s;
-  text-shadow: 0 0 40px rgba(184, 149, 106, 0.6), 0 1px 4px rgba(0, 0, 0, 0.4);
+  transition:
+    color 0.4s,
+    text-shadow 0.4s;
+  text-shadow:
+    0 0 40px rgba(184, 149, 106, 0.6),
+    0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 #nav.scrolled .nav-logo {
@@ -251,11 +257,13 @@ body.lang-en small[data-lang="en"] {
   color: rgba(255, 255, 255, 0.95);
   transition: var(--trans);
   position: relative;
-  text-shadow: 0 0 22px rgba(184, 149, 106, 0.5), 0 1px 3px rgba(0, 0, 0, 0.45);
+  text-shadow:
+    0 0 22px rgba(184, 149, 106, 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .nav-links a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -3px;
   left: 0;
@@ -301,8 +309,12 @@ body.lang-en small[data-lang="en"] {
   padding: 0.32rem 0.85rem;
   border-radius: 20px;
   transition: var(--trans);
-  text-shadow: 0 0 20px rgba(184, 149, 106, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 0 16px rgba(184, 149, 106, 0.2), inset 0 0 12px rgba(184, 149, 106, 0.05);
+  text-shadow:
+    0 0 20px rgba(184, 149, 106, 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow:
+    0 0 16px rgba(184, 149, 106, 0.2),
+    inset 0 0 12px rgba(184, 149, 106, 0.05);
 }
 
 .lang-btn:hover {
@@ -426,7 +438,12 @@ body.lang-en small[data-lang="en"] {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(160deg, rgba(26, 35, 40, 0.30) 0%, rgba(26, 35, 40, 0.08) 45%, rgba(26, 35, 40, 0.75) 100%);
+  background: linear-gradient(
+    160deg,
+    rgba(26, 35, 40, 0.3) 0%,
+    rgba(26, 35, 40, 0.08) 45%,
+    rgba(26, 35, 40, 0.75) 100%
+  );
 }
 
 .hero-grain {
@@ -455,7 +472,9 @@ body.lang-en small[data-lang="en"] {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 1.6rem;
-  text-shadow: 0 0 30px rgba(184, 149, 106, 0.6), 0 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow:
+    0 0 30px rgba(184, 149, 106, 0.6),
+    0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .hero-title {
@@ -488,7 +507,9 @@ body.lang-en small[data-lang="en"] {
   color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.06em;
   margin-bottom: 3rem;
-  text-shadow: 0 0 40px rgba(184, 149, 106, 0.55), 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow:
+    0 0 40px rgba(184, 149, 106, 0.55),
+    0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .btn-hero {
@@ -507,7 +528,7 @@ body.lang-en small[data-lang="en"] {
 }
 
 .btn-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: var(--gold);
@@ -524,7 +545,7 @@ body.lang-en small[data-lang="en"] {
   transform: scaleX(1);
 }
 
-.btn-hero>span {
+.btn-hero > span {
   position: relative;
   z-index: 1;
 }
@@ -561,7 +582,6 @@ body.lang-en small[data-lang="en"] {
 }
 
 @keyframes scrollAnim {
-
   0%,
   100% {
     opacity: 0.35;
@@ -712,17 +732,59 @@ body.lang-en small[data-lang="en"] {
   background: var(--bg-dark);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   margin-top: 3rem;
+  display: flex;
+  align-items: stretch;
 }
 
 .tabs-row {
+  flex: 1;
   display: flex;
   justify-content: center;
   overflow-x: auto;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 .tabs-row::-webkit-scrollbar {
   display: none;
+}
+
+/* ── Strelice za navigaciju tabovima ── */
+.tabs-arrow {
+  display: none; /* sakrivene na desktopu */
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  background: var(--bg-dark);
+  border: none;
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition:
+    color 0.25s,
+    background 0.25s;
+  position: relative;
+  z-index: 1;
+}
+
+.tabs-arrow--left {
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 4px 0 12px rgba(26, 35, 40, 0.6);
+}
+
+.tabs-arrow--right {
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: -4px 0 12px rgba(26, 35, 40, 0.6);
+}
+
+.tabs-arrow:hover {
+  color: var(--gold);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tabs-arrow:disabled {
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 .tab-btn {
@@ -741,7 +803,7 @@ body.lang-en small[data-lang="en"] {
 }
 
 .tab-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -859,7 +921,7 @@ body.lang-en small[data-lang="en"] {
   font-family: var(--serif);
   font-size: 1.5rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.22);
+  color: var(--gold);
   letter-spacing: 0.12em;
   font-style: italic;
 }
@@ -930,7 +992,7 @@ body.lang-en small[data-lang="en"] {
 }
 
 .gal-hover::after {
-  content: '+';
+  content: "+";
   font-family: var(--serif);
   font-size: 3.5rem;
   font-weight: 300;
@@ -1314,6 +1376,15 @@ footer {
     top: calc(var(--nav-h) - 10px);
   }
 
+  /* Prikaži strelice i poravnaj tabove levo na mobilnom */
+  .tabs-arrow {
+    display: flex;
+  }
+
+  .tabs-row {
+    justify-content: flex-start;
+  }
+
   .tab-btn {
     padding: 1.1rem 1.3rem;
     font-size: 0.65rem;
@@ -1456,7 +1527,7 @@ footer {
 }
 
 .event-card-list li::before {
-  content: '';
+  content: "";
   display: block;
   width: 18px;
   height: 1px;
@@ -1555,7 +1626,12 @@ footer {
   flex: 1;
   max-width: 200px;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(184, 149, 106, 0.4), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(184, 149, 106, 0.4),
+    transparent
+  );
 }
 
 .divider-icon {
@@ -1583,7 +1659,7 @@ footer {
 /* Dekorativne linije sa strane naslova */
 .menu-cat::before,
 .menu-cat::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   width: 60px;
