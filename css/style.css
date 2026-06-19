@@ -1703,3 +1703,36 @@ footer {
     left: calc(50% + 90px);
   }
 }
+
+/* ── Footer credit — "Website created by" ── */
+.footer-credit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.5rem;
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+
+.footer-credit:hover {
+  opacity: 1;
+}
+
+.footer-credit-label {
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.footer-credit-logo {
+  width: auto;
+  height: 7rem;
+  opacity: 0.85;
+  background: none;
+}
+
+.footer-credit:hover .footer-credit-logo {
+  opacity: 1;
+}
