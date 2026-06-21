@@ -359,7 +359,7 @@ body.lang-en small[data-lang="en"] {
 .mobile-nav {
   position: fixed;
   inset: 0;
-  z-index: 800;
+  z-index: 950;
   background: rgba(26, 35, 40, 0.98);
   backdrop-filter: blur(8px);
   display: none;
@@ -367,6 +367,11 @@ body.lang-en small[data-lang="en"] {
   align-items: center;
   justify-content: center;
   gap: 2.2rem;
+}
+
+body.mobile-nav-open .hamburger {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .mobile-nav.open {
@@ -1728,7 +1733,7 @@ footer {
 
 .footer-credit-logo {
   width: auto;
-  height: 7rem;
+  height: 4rem;
   opacity: 0.85;
   background: none;
 }
